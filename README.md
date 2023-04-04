@@ -40,7 +40,7 @@ To obtain the CAPEX of a chemical process,  e.g. through Lang factor method, equ
 
 Hence, this cost correlation is implemented in the python code, which retrieves the value for the heat exchanger area from the Aspen Plus simulation. This python package can be found at LINK.
 
-## Packages
+## Included Packages
 The costs of the following equipment were computed using the connected python Aspen Plus model: 
 LINK
 
