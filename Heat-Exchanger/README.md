@@ -4,7 +4,7 @@
 
 This function decides about the type of heat exchanger according to heuristics of Seider et al. (2008) and gives as output the sum of the current costs of all heat exchangers present in the simulation (*E_totalcosts*), the current costs of the individual heat exchangers (array *E_purchase_costs_current*), the heat exchanger duties (array *E_Q*) of the individual heat exchangers as well as the required heat exchanger areas of the individual heat exchangers (array *E_area*). As input required is the application, the total number of heat exchangers (*No_Heat_Exchanger*), the defined material and tube length correction factor (arrays *E_FM* and *E_FL*) of the heat echangers, and the current cost index (*current_cost_index*). The factors can be found in the book of Seider et al. (2008). For example, for stainless steel heat exchangers, the material factor is always set to 1. 
 
-# Covered Heat Exchanger Equipment Types 
+## Covered Heat Exchanger Equipment Types 
 
 This code automatically decides which type of heat exchanger is taken according to heuristics of Seider et al. (2008). Four types of heat exchangers are considered: 
 
