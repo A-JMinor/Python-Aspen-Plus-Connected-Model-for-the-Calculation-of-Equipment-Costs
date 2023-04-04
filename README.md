@@ -30,3 +30,9 @@ To be able to use Aspen Plus as a blackbox model, and control its variables from
 ```ruby
 x = Application.Tree.FindNode("\Data\Streams\C7\Output\MOLEFRAC\MIXED\HEPTANE").Value
 ```
+
+## Equipment Cost Correlations 
+vv
+
+## Packages
+vv
