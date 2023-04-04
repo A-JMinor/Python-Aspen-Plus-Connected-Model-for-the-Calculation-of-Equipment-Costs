@@ -34,9 +34,18 @@ operating_factor = 0.9
 cost_index_2006 = 500
 
 
+#This function gives as output the sum of the current costs of all heat exchangers present in the simulation (E_totalcosts), 
+#the current costs of the individual heat exchangers in form of a vector (E_purchase_costs_current), 
+#the heat exchanger duties (E_Q) of the individual heat exchangers in form of a vector
+#and the required heat exchanger areas of the individual heat exchangers (E_area) in form of a vector. 
+#Required is the application (AspenPlus), the total number of heat exchangers, the defined fouling factor of the 
+#heat echangers, the tube length correction factor for shell and tube heat exchangers, and the current cost index 
+#As a prerequisite, it is required to name all heat exchangers in Aspen Plus according to: E0[heat exchanger number]. 
+#For example, if there are two heat exchangers, they need to be defined as E01 and E02 in Aspen Plus. 
 
 def heatexchanger(Application, No_Heat_Exchanger, fouling_factor, E_FL, current_cost_index):
     
+    #For storing the results in a vector
     E_T = np.zeros(No_Heat_Exchanger)
     E_Q = np.zeros((No_Heat_Exchanger))
     E_U = np.zeros(No_Heat_Exchanger)
@@ -52,11 +61,14 @@ def heatexchanger(Application, No_Heat_Exchanger, fouling_factor, E_FL, current_
     watercontent = np.zeros(No_Heat_Exchanger)
     E_Q_BTU = np.zeros(No_Heat_Exchanger)
 
-    
+
+    #For loop for all heat exchangers in the simulation
     i=0
     for i in range(1,No_Heat_Exchanger+1):
         
-        try:                #because paths a called differently for different type of heat exchangers
+        #one of the following two commands for computing the temperature E_T will work, try function is required because
+        #depending on the type of heat exchanger, the path in aspen plus is called differently
+        try:                
             E_T[i-1] = Application.Tree.FindNode("\\Data\\Blocks\\E0{}\\Output\\COLD_TEMP".format(i)).Value
         except: 
             print()
@@ -67,7 +79,8 @@ def heatexchanger(Application, No_Heat_Exchanger, fouling_factor, E_FL, current_
             print()
             
         
-        if E_T[i-1] < 252+273.15 :        #Because else no heat exchanger but fired heater (for T above 252C)
+        
+        if E_T[i-1] < 252+273.15 :      #For this temperature, either double pipe or shell and tube heat exchangers are used
         
             #for area calculation:
             E_Q[i-1] = Application.Tree.FindNode("\\Data\\Blocks\\E0{}\\Output\\HX_DUTY".format(i)).Value
@@ -112,7 +125,6 @@ def heatexchanger(Application, No_Heat_Exchanger, fouling_factor, E_FL, current_
     
     
             else:       #Shell and Tube HE is taken for areas above 150 ft2 
-            #!check this again, no example!
                 
                 #for pressure factor calculation:
                 E_pressure[i-1] = Application.Tree.FindNode("\\Data\\Blocks\\E0{}\\Output\\COLDINP".format(i)).Value * N_m2_to_psig    #Aspen in N/m2
@@ -144,6 +156,7 @@ def heatexchanger(Application, No_Heat_Exchanger, fouling_factor, E_FL, current_
     
     
     
+        #for fired heaters working with fuel
         elif E_T[i-1] > 252+273.15 and E_T[i-1] <= 300+273.15:
             
             E_Q[i-1] = Application.Tree.FindNode("\Data\Blocks\E0{}\Output\QCALC".format(i)).Value  #Aspen in W
@@ -164,7 +177,8 @@ def heatexchanger(Application, No_Heat_Exchanger, fouling_factor, E_FL, current_
         
         
         
-        elif E_T[i-1] > 250+273.15 :
+        #for specific fire heaters working with Dowtherm A
+        elif E_T[i-1] > 300+273.15:
             
             E_Q[i-1] = Application.Tree.FindNode("\Data\Blocks\E0{}\Output\QCALC".format(i)).Value  #Aspen in W
             E_Q_BTU[i-1] = E_Q[i-1] * W_to_Btu_hr   
