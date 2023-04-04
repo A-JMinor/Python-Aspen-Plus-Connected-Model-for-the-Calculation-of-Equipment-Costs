@@ -1,8 +1,10 @@
-# Equipment Costs and Type for Heat Exchangers 
+# Function Details
 
 **Important note:** This code only works correctly if the SI units are used in Aspen Plus. Particularly, for temperature and power / enthalpy flow the units are required to be in K and kW, respectively. Furthermore, all heat exchangers in Aspen Plus must be named according to E01, E02, E03, .. etc in the Aspen Plus simulation. 
 
-This function gives as output the sum of the current costs of all heat exchangers present in the simulation (*E_totalcosts*), and  the current costs of the individual heat exchangers (*E_purchase_costs_current*),  the heat exchanger duties (*E_Q*) of the individual heat exchangers as well as the required heat exchanger areas of the individual heat exchangers (*E_area*) in form of a vector. As input required is the application, the total number of heat exchangers (*No_Heat_Exchanger*), the defined material and tube length correction factor (*E_FM* and *E_FL*) of the heat echangers, and the current cost index (*current_cost_index*). The factors can be found in the book of Seider et al. (2008). For example, for stainless steel heat exchangers, the material factor is always set to 1. 
+This function decides about the type of heat exchanger according to heuristics of Seider et al. (2008) and gives as output the sum of the current costs of all heat exchangers present in the simulation (*E_totalcosts*), the current costs of the individual heat exchangers (array *E_purchase_costs_current*), the heat exchanger duties (array *E_Q*) of the individual heat exchangers as well as the required heat exchanger areas of the individual heat exchangers (array *E_area*). As input required is the application, the total number of heat exchangers (*No_Heat_Exchanger*), the defined material and tube length correction factor (arrays *E_FM* and *E_FL*) of the heat echangers, and the current cost index (*current_cost_index*). The factors can be found in the book of Seider et al. (2008). For example, for stainless steel heat exchangers, the material factor is always set to 1. 
+
+# Covered Heat Exchanger Equipment Types 
 
 This code automatically decides which type of heat exchanger is taken according to heuristics of Seider et al. (2008). Four types of heat exchangers are considered: 
 
@@ -17,7 +19,7 @@ For the first two types of heat exchangers (shell and tube, and double pipe, bot
 
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/HeatX.PNG" width="650">
 
-## Equations used in the Python Code
+## Used Equations
 
 The code in python was implemented according to the following equations: 
 
@@ -25,7 +27,7 @@ The code in python was implemented according to the following equations:
 
 It is important to mention that the units are automatically adapted in the code, for example the area in m<sup>2</sup> is changed to an area in ft<sup>2</sup> within the function to match the cost correlation function. However, the output is fully transferred to SI units again, hence nothing needs to be adapted manually, only the units of the Aspen Plus file need to correspond to SI units as written above.
 
-## Example
+# Example
 
 An example for the cost calculation of heat exchangers in a cumene production plant is given. 
 
