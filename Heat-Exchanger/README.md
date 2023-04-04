@@ -1,6 +1,6 @@
 # Prerequisites and Covered Types of Heat Exchangers
 
-**This code only works correctly if the units in Aspen Plus for temperature and power / enthalpy flow are set to K and kW, respectively.**
+**Important note:** This code only works correctly if the units in Aspen Plus for temperature and power / enthalpy flow are set to K and kW, respectively.
 
 This code is written for 4 types of heat exchangers: 1) double pipe for areas below 14 m<sup>2</sup>, 2) shell and tube for areas above m<sup>2</sup>, 3) fired heaters for temperatures above 252°C but below 300°C, and 4) specialised fired heaters (using Dowtherm A) for temperatures above 300°C.
 
