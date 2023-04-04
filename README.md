@@ -1,5 +1,5 @@
 # Python Aspen Plus Connected Model for the Calculation of Equipment Costs
-Python model for the calculation of equipment costs (e.g. for the CSTR reactor, heat exchangers, RADFRAC distillation columns, etc.) that were simulated in Aspen Plus. The python code retrieves data from Aspen Plus, applies cost correlations of Seider et al. (2009) using this data, feeds input variables to Aspen Plus (if necessary), runs the simulation (if necessary) and gives the dimensions as well as equipment costs as output.
+Python model for the calculation of equipment costs (e.g. for the CSTR reactor, heat exchangers, RADFRAC distillation columns, etc.) that were simulated in Aspen Plus. The python code retrieves data from Aspen Plus, applies cost correlations of Seider et al. (2008) using this data, feeds input variables to Aspen Plus (if necessary), runs the simulation (if necessary) and gives the dimensions as well as equipment costs as output.
 
 ## Prerequisites
 In this repo, the prerequisites are just mentioned or shortly explained here. There is a [detailed example](https://github.com/edgarsmdn/Aspen_Plus_Python#aspen-plus-python-connection-example) providing an entire python and aspen plus file at @edgarsmdn. There, a sensitivity analysis is performed where the python code is feeding / retrieving data to / from Aspen Plus.
@@ -32,11 +32,12 @@ x = Application.Tree.FindNode("\Data\Streams\C7\Output\MOLEFRAC\MIXED\HEPTANE").
 ```
 
 ## Equipment Cost Correlations 
-To obtain the CAPEX of a chemical process,  e.g. through Lang factor method, equipment costs are often required. Those equipment costs can be computed by cost correlation functions, that were established in the past by correlating the costs to a certain size factor. For example, to compute the costs of a heat exchanger, the area is required as size factor, and a cost function to compute the *purchase costs ($)* in terms of the area *A* can be found from the literature:
+To obtain the CAPEX of a chemical process,  e.g. through Lang factor method, equipment costs are often required. Those equipment costs can be computed by cost correlation functions, that were established in the past by correlating the costs to a certain size factor. For example, to compute the costs of a heat exchanger, the area is required as size factor, and a cost function to compute the *purchase costs ($)* in terms of the area *A* can be found in the literature[^1]:
 
 > <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/purchasecosts.PNG" width="800">
 
 ## Packages
 vv
 
-## Reference
+## References
+[^1]: W.D. Seider, J.D. Seader, D.R. Lewin, Product and Process Design Principles: Synthesis, Analysis and Design, 3rd Edition, Wiley New York, 2008.
