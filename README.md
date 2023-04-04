@@ -25,8 +25,8 @@ Application.visible = 1
 ```
 
 ### Obtain an input/output Variable from Aspen Plus
-To be able to use Aspen Plus as a blackbox model, and control its variables from Python (e.g. change the input variables of or get the results of an Aspen Plus simulation process), the "*path*" of the required Aspen Plus variables are needed. Those path IDs can be found at the *Customize tab* at *Variable Explorer* in Aspen Plus and need to be copied pasted to python. A screenshot explaining how to obtain a certain variable such as the mole fraction of heptane is shown at [Aspen Plus Python Connection Example](https://github.com/edgarsmdn/Aspen_Plus_Python#aspen-plus-python-connection-example).
+To be able to use Aspen Plus as a blackbox model, and control its variables from Python (e.g. change the input variables of or get the results of an Aspen Plus simulation process), the "*path*" of the required Aspen Plus variables are needed. Those path IDs can be found at the *Customize tab* at *Variable Explorer* in Aspen Plus and need to be copied pasted to python. A screenshot explaining how to obtain a certain variable such as the value of the mole fraction of heptane is shown at [Aspen Plus Python Connection Example](https://github.com/edgarsmdn/Aspen_Plus_Python#aspen-plus-python-connection-example). An example python command to save this molefraction as variable x is shown below. 
 
 ```ruby
-Application.Tree.FindNode("\Data\Streams\C7\Output\MOLEFRAC\MIXED\HEPTANE").Value
+x = Application.Tree.FindNode("\Data\Streams\C7\Output\MOLEFRAC\MIXED\HEPTANE").Value
 ```
