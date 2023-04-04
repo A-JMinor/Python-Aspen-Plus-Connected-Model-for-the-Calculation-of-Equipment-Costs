@@ -33,6 +33,9 @@ x = Application.Tree.FindNode("\Data\Streams\C7\Output\MOLEFRAC\MIXED\HEPTANE").
 
 ## Equipment Cost Correlations 
 vv
+> Picture of cost correlations Seider et al. (2009)
 
 ## Packages
 vv
+
+## Reference
