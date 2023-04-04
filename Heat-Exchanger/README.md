@@ -21,7 +21,7 @@ For the first two types of heat exchangers (shell and tube, and double pipe, bot
 
 ## Equations used in the Python Code
 
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerequations.PNG" width="650">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerequations.PNG" width="800">
 
 
 ## Example
