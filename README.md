@@ -34,7 +34,7 @@ x = Application.Tree.FindNode("\Data\Streams\C7\Output\MOLEFRAC\MIXED\HEPTANE").
 ## Equipment Cost Correlations 
 To obtain the CAPEX of a chemical process,  e.g. through Lang factor method, equipment costs are often required. Those equipment costs can be computed by cost correlation functions, that were established in the past by correlating the costs to a certain size factor. For example, to compute the costs of a heat exchanger, the area is required as size factor, and a function in terms of the area can be found from the literature:
 
-> <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/purchasecosts.PNG" width="500">
+> <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/purchasecosts.PNG" width="1000">
 
 ## Packages
 vv
