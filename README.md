@@ -2,7 +2,7 @@
 Python model for the calculation of equipment costs (e.g. for the CSTR reactor, heat exchangers, RADFRAC distillation columns, etc.) that were simulated in Aspen Plus. The python code retrieves data from Aspen Plus, applies cost correlations of Seider et al. (2009) using this data, feeds input variables to Aspen Plus (if necessary), runs the simulation (if necessary) and gives the dimensions as well as equipment costs as output.
 
 ## Prerequisites
-In this repo, the prerequisites are just mentioned or shortly explained here. A detailed example providing an entire python and aspen plus file can be found at [Aspen Plus Python Connection Example](https://github.com/edgarsmdn/Aspen_Plus_Python#aspen-plus-python-connection-example). There, a sensitivity analysis is performed where the python code is feeding / retrieving data to / from Aspen Plus.
+In this repo, the prerequisites are just mentioned or shortly explained here. A detailed example providing an entire python and aspen plus file can be found at @edgarsmdn [Aspen Plus Python Connection Example](https://github.com/edgarsmdn/Aspen_Plus_Python#aspen-plus-python-connection-example). There, a sensitivity analysis is performed where the python code is feeding / retrieving data to / from Aspen Plus.
 
 ### Connection between Aspen Plus and Python
 The connection between Aspen Plus and Python is first required, which is done by pywin32 to provide access, control and automation of Aspen Plus from python. Hence, each package starts with this connection, and an example code for assessing an aspen plus backup file with the name "*simulation*" can be found below. 
