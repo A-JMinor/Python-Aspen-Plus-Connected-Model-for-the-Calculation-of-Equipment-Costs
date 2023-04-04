@@ -22,6 +22,31 @@ For the first two types of heat exchangers (shell and tube, and double pipe, bot
 
 ## Equations used in the Python Code
 
+Meaning	Formula
+Heat load	From Aspen Plus or calculation through: Q=c_p ( ∙m) ̇  ∙∆T
+
+Logarithmic mean	From Aspen Plus or calculation through: ∆T_LM=(∆T_1-∆T_2)/ln⁡((∆T_1)/(∆T_2 )) 	
+Heat transfer coefficient	water – liquid: 850 W/m2/°C
+liquid – liquid: 280 W/m2/°C
+ gas – gas: 30 W/m2/°C
+reboiler: 1140 W/m2/°C
+water – water: 1140 W/m2/°C
+liquid – condensing vapour: 850 W/m2/°C	
+Correction factor	F=0.9      (heuristic)	
+Area	A=Q/(U ∙∆T_LM∙ F)	
+Base costs 	Heat Exchanger: A in ft^2
+For A < 105 ft2: Double pipe: C_b=exp⁡(7.1460+0.16 ln⁡(A))
+Else: Shell and tube: C_b=exp⁡(11.0545-0.9228 ln⁡(A)+0.09861〖ln⁡(A)〗^2)
+
+Reboiler: A in ft^2
+Kettle reboiler: C_b=exp⁡(11.967-0.8709 ln⁡(A)+0.09005〖ln⁡(A)〗^2)
+
+Fired Heater: Q in btu/hr
+For T<300°C:  C_b=exp⁡(0.32325-0.766  ln⁡(Q))
+For T>300°C: Dowtherm A Heater: C_b=12.74∙ Q^0.65	
+Purchase costs	 Shell and tube C_p=F_M∙ F_L  〖∙C〗_b    with F_L=1.05 (heuristic)
+Double pipe,kettle reboiler and fired heater: C_p=F_M∙ C_b   	
+
 
 ## Example
 
