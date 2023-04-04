@@ -21,8 +21,11 @@ For the first two types of heat exchangers (shell and tube, and double pipe, bot
 
 ## Equations used in the Python Code
 
+The code in python was implemented according to the following equations: 
+
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerequations.PNG" width="700">
 
+It is important to mention that the units are automatically adapted in the code, for example the area in m<sup>2</sup> is changec to an area in ft<sup>2</sup> within the function to match the cost correlation function. However, the output is fully transferred to SI units again, hence nothing needs to be adapted manually.
 
 ## Example
 
