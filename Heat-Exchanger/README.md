@@ -27,13 +27,15 @@ The code in python was implemented according to the following equations:
 
 It is important to mention that the units are automatically adapted in the code, for example the area in m<sup>2</sup> is changed to an area in ft<sup>2</sup> within the function to match the cost correlation function. However, the output is fully transferred to SI units again, hence nothing needs to be adapted manually, only the units of the Aspen Plus file need to correspond to SI units as written above.
 
+
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerexample.PNG" width="1000">
+
+
 # Example
 
 An example for the cost calculation of heat exchangers in a cumene production plant is given. 
 
 First, the Aspen Plus simulation had to be changed to match SI units as written above, rename all heat exchangers as described above, and change all heat exchangers to HeatX models.
-
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerexample.PNG" width="1000">
 
 $$
 \begin{array}{|c|c|}
