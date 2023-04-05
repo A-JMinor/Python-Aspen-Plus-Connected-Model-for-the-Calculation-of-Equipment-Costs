@@ -14,8 +14,9 @@ The dimensions of the DWSTU and RADFRAC model are calulcated as show below. It i
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationDimension.png" width="700">
 </p>
 
-<p align="center">
 Based on the vessel weight, the costs are calculated as follows:
+
+<p align="center">
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationCosts.png" width="700">
 </p>
 
