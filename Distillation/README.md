@@ -50,6 +50,7 @@ The functions *condenserDWSTU* or *condenserRADFRAC* give as output the current 
 
 The equations for the cost calculation of a kettle reboiler or condenser are given at the subfolder [Heat Exchangers](https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/tree/main/Heat-Exchanger).
 
+
 # Example
 
 
