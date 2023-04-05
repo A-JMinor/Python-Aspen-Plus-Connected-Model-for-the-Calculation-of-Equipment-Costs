@@ -37,17 +37,13 @@ An example for the cost calculation of heat exchangers in a cumene production pl
 
 First, the Aspen Plus simulation had to be changed to match SI units as written above, rename all heat exchangers as described above, and change all heat exchangers to HeatX models.
 
-Meaning	Formula
-Heat load	From Aspen Plus
-{:[" Logarithmic mean temperature "],[" difference "]:}	From Aspen Plus
-Heat transfer coefficient	{:[" water - liquid: "850" "W//m^(2)//^(@)C],[" liquid - liquid: "280" "W//m^(2)//^(@)C],[" gas - gas: "30" "W//m^(2)//^(@)C],[" reboiler: "1140" "W//m^(2)//^(@)C],[" water - water: "1140" "W//m^(2)//^(@)C],[" liquid - condensing vapour: "850" "W//m^(2)//^(@)C]:}
-Correction factor	F=0.9quad (heuristic Seider et al. (2008))
+Logarithmic mean temperature difference	From Aspen Plus
+Heat transfer coefficient	<ul><li>Water-liquid: 850 W/m²·°C</li><li>Liquid-liquid: 280 W/m²·°C</li><li>Gas-gas: 30 W/m²·°C</li><li>Reboiler: 1140 W/m²·°C</li><li>Water-water: 1140 W/m²·°C</li><li>Liquid-condensing vapour: 850 W/m²·°C</li></ul>
+Correction factor	F=0.9 (heuristic Seider et al., 2008)
 Arest	Q
-Area	A= bar(U*DeltaT_(LM)*F)
-	{:[" Heat Exchanger: "A" in "ft^(2)],[" For "A < 105ft^(2):" Double pipe: "C_(b)=exp(7.1460+0.16 ln(A))],[" Else: Shell and tube: "C_(b)=exp(11.0545-0.9228 ln(A)+0.09861 ln(A)^(2))]:}
-Base costs	{:[" Reboiler: "A" in "ft^(2)],[" Kettle reboiler: "C_(b)=exp(11.967-0.8709 ln(A)+0.09005 ln(A)^(2))]:}
-	{:[" Fired Heater: "Q" in btu "//hr],[" For "T < 300^(@)C:C_(b)=exp(0.32325-0.766 ln(Q))],[" For "T > 300^(@)C:" Dowtherm A Heater: "C_(b)=12.74*Q^(0.65)]:}
-Purchase costs	{:[" Shell and tube "C_(p)=F_(M)*F_(L)*C_(b)" with "F_(L)=1.05" (heuristic Seider et al. (2008)) "],[" Double pipe, kettle reboiler and fired heater: "C_(p)=F_(M)*C_(b)],[" with "F_(M)" according to heuristics (Seider et al. (2008)) "]:}
+Area	A=U·ΔT<sub>LM</sub>·F / bar<br>Heat Exchanger: A in ft²<br>For A < 105 ft²: Double pipe: C<sub>b</sub>=exp(7.1460+0.16 ln(A))<br>Else: Shell and tube: C<sub>b</sub>=exp(11.0545-0.9228 ln(A)+0.09861 ln(A)²)
+Base costs	Reboiler: A in ft²<br>Kettle reboiler: C<sub>b</sub>=exp(11.967-0.8709 ln(A)+0.09005 ln(A)²)<br>Fired Heater: Q in BTU/h<br>For T < 300°C: C<sub>b</sub>=exp(0.32325-0.766 ln(Q))<br>For T > 300°C: Dowtherm A Heater: C<sub>b</sub>=12.74·Q⁰·⁶⁵
+Purchase costs	<ul><li>Shell and tube: C<sub>p</sub>=F<sub>M</sub>·F<sub>L</sub>·C<sub>b</sub> with F<sub>L</sub>=1.05 (heuristic Seider et al., 2008)</li><li>Double pipe, kettle reboiler and fired heater: C<sub>p</sub>=F<sub>M</sub>·C<sub>b</sub> with F<sub>M</sub> according to heuristics (Seider et al., 2008)</li></ul>
 
 
 Then, running the python code ExampleCumenePlant.py, it calls the function Heatexchanger.py and assesses the Aspen Plus example simulation CumenePlant4.bkp and computes costs and areas of all heat exchangers. As results the following outputs for the total costs, individual heat exchanger costs, heat duties and areas are obtained:
