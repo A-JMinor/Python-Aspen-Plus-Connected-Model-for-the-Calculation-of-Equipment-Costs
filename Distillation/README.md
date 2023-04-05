@@ -64,45 +64,27 @@ First, Aspen Plus and Python had to be connected as shown, the Aspen Plus simula
 
 i=0
 for i in range(1,no_towers+1):
-    
 
     nameRADFRAC = "RAD{}".format(i)
+    d_costs_puchase2019[i-1], d_diamter[i-1], d_volume[i-1] = distillationRADFRAC(Application, nameRADFRAC, tray_Spacing, top, bottom, rho, F_M, cost_index_2019) #distillation column 
     
-    #distillation column    
-    d_costs_puchase2019[i-1], d_diamter[i-1], d_volume[i-1] = distillationRADFRAC(Application, nameRADFRAC, tray_Spacing, top, bottom, rho, F_M, cost_index_2019)
-
-    
-    #kettle reboiler
-    kettle_T = Application.Tree.FindNode("\Data\Blocks\\" + nameRADFRAC + "\Output\BOTTOM_TEMP").Value 
-    #utility kettle 
-    if kettle_T <= 120+273.15:
+    kettle_T = Application.Tree.FindNode("\Data\Blocks\\" + nameRADFRAC + "\Output\BOTTOM_TEMP").Value       #kettle reboiler
+    if kettle_T <= 120+273.15:                                  #utility kettle
         kettle_hotutility_temperature.append(138.9 + 273.15)    #LP Steam
-    
     elif kettle_T <= 170+273.15 and kettle_T > 120+273.15:
         kettle_hotutility_temperature.append(186 + 273.15)     #MP Steam
-    
     elif kettle_T <= 255+273.15 and kettle_T > 170+273.15:
         kettle_hotutility_temperature.append(270 + 273.15)     #HP Steam
-    
     elif kettle_T <= 300+273.15 and kettle_T > 255+273.15:
         kettle_hotutility_temperature.append(337.8  + 273.15)     #FuelOilNo2 Steam
-    
     elif kettle_T <= 380+273.15 and kettle_T > 300+273.15:
         kettle_hotutility_temperature.append(400 + 273.15)     #DowthermA Steam
-    
-    else:
-        print("kettle temperature out of range")
 
     kettle_purchase_costs2019[i-1], kettle_Q[i-1], kettle_area[i-1] = kettleRADFRAC(Application, nameRADFRAC, kettle_hotutility_temperature[i-1], kettle_U,fouling_factor, cost_index_2019)
-    
-    
-    #condenser
-    cond_purchase_costs2019[i-1], cond_Q[i-1] = condenserRADFRAC(Application,nameRADFRAC, fouling_factor, cost_index_2019)
 
-    
-    #reflux drum
-    name_distallestream_DWSTU = "RADTOP{}".format(i)
-    
+    cond_purchase_costs2019[i-1], cond_Q[i-1] = condenserRADFRAC(Application,nameRADFRAC, fouling_factor, cost_index_2019)      #condenser
+
+    name_distallestream_DWSTU = "RADTOP{}".format(i)        #reflux drum
     drum_costs_puchase2019[i-1], drum_volume[i-1] = refluxdrumRADFRAC(Application, nameRADFRAC, name_distallestream_DWSTU, drum_residence_time, drum_filled, drum_l_to_d, rho, F_M, cost_index_2019)
     
 ```
