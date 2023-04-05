@@ -58,7 +58,7 @@ An example for the cost calculation of the three RADFRAC columns of the cumene p
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerexample.PNG" width="1000">
 </p>
 
-First, Aspen Plus and Python had to be connected as shown, the Aspen Plus simulation had to be changed to match SI units as written above, and Tray Sizing had to be created as shown above to obtain column diameters. Subsequently, the costs of towers, reflux drums, condensers, and kettle reboilers could be calculated in a for loop:
+First, Aspen Plus and Python had to be connected, the Aspen Plus simulation had to be changed to match SI units as written above, and Tray Sizing had to be created as shown above to obtain column diameters. Subsequently, the costs of towers, reflux drums, condensers, and kettle reboilers could be calculated in a for loop:
 
 ```ruby
 
