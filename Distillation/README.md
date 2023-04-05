@@ -76,9 +76,6 @@ for i in range(1,no_towers+1):
     elif kettle_T <= 255+273.15 and kettle_T > 170+273.15:
         kettle_hotutility_temperature.append(270 + 273.15)      #HP Steam
     elif kettle_T <= 300+273.15 and kettle_T > 255+273.15:
-        kettle_hotutility_temperature.append(337.8  + 273.15)   #FuelOilNo2 Steam
-    elif kettle_T <= 380+273.15 and kettle_T > 300+273.15:
-        kettle_hotutility_temperature.append(400 + 273.15)      #DowthermA Steam
     
     kettle_purchase_costs2019[i-1], kettle_Q[i-1], kettle_area[i-1] = kettleRADFRAC(Application, nameRADFRAC, kettle_hotutility_temperature[i-1], kettle_U,fouling_factor, cost_index_2019)
 
