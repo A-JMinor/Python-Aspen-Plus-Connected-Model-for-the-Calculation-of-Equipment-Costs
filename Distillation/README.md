@@ -1,4 +1,4 @@
-# Function Details
+# Function Details 
 
 **Important note:** This code only works correctly if the SI units are used in Aspen Plus. Particularly, for temperature and power / enthalpy flow the units are required to be in K and kW, respectively. 
 
@@ -8,8 +8,6 @@ The functions *distillationDWSTU* or *distillationRADFRAC* give as output the co
 
 The functions *refluxdrumDWSTU* or *refluxdrumRADFRAC* give as output the current costs of the reflux drums of the DWSTU or RADFRAC column model used in Aspen Plus (*drum_costs_puchase_current*) and the volumes of the horizontal vessels (*drum_volume* in m<sup>3</sup>). As input required is the application (aspen Plus python connection), the name of the DWSTU / RADFRAC columns defined in Aspen Plus (*nameDWSTU / nameRADFRAC*), the name of the distillates of the DWSTU / RADFRAC (*name_distallestream_DWSTU* / *name_distallestream_RADFRAC*), the residence time of the drum (*drum_residence_time*), which is usally defined according to heuristics (mostly 300seconds), the level of the liquid in the reflux drum (*drum_filled*), which is mostly defined according to heuristics (often 0.5), the length to diameter ratio (heuristics: 3), the density of the material in kg/m3 (d_rho), e.g. for stainless steel 8000 kg/m3, the material factor (F_M), e.g. for stainless steel 2.1 and the cost index of the desired year for the CAPEX calculation.
 
-
-## Covered Distillation Models
 
 ## Used Equations 
 
