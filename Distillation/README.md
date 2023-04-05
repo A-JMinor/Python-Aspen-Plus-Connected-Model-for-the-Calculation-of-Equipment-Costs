@@ -37,15 +37,9 @@ Based on the horizontal vessel weight, the costs are calculated as follows:
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/RefluxdrumCosts.png" width="700">
 </p>
 
-## Costs of the Kettle Reboilers
+## Costs of the Kettle Reboilers and Condensers of the Distillation Columns
 The functions *kettleDWSTU* or *kettleRADFRAC* gives as output the current costs of the kettle reboiler of the DWSTU or RADFRAC column model used in Aspen Plus (*kettle_purchase_costs_current*), the heat duty and the required area (*kettle_Q* in kW, *kettle_area* in m<sup>2</sup>). As input required is the application (aspen Plus python connection), the name of the DWSTU / RADFRAC column defined in Aspen Plus (*nameDWSTU / nameRADFRAC*), the temperature of the hot utility (*kettle_hotutility_temperature*) that is used (e.g. 412 Kelvin for LP steam), the heat transfer coefficient (*kettle_U*), e.g. 1140 W/m2/°C as a heuristic, the fouling factor, e.g. 0.9 as a heuristic, and the cost index of the desired year for the CAPEX calculation.
 
-## Costs of the Condensers
-
-
-
-
-## Used Equations 
 
 
 
