@@ -85,4 +85,4 @@ for i in range(1,no_towers+1):
 ```
 As results are obtained:
 
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationExample.PNG" width="450">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationExample.PNG" width="600">
