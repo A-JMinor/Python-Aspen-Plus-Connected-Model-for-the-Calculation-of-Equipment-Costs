@@ -17,7 +17,7 @@ The dimensions of the DWSTU and RADFRAC model are calulcated as show below.
 It is important to mention that for the DWSTU model in AspenPlus, the diameter needed to be calculated in the python code in an while loop, to operate at 80 percent of the flooding velocity. For the RADFRAC column model, Aspen Plus is able to calculate the diameter and give it as output. For this, it is important to generate a Tray Sizing tab *1* as shown in the figure below.  
 
 <p align="center">
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/RADFRACSizing.PNG" width="500">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/RADFRACSizing.PNG" width="600">
 </p>
 
 Based on the vessel weight, the costs are calculated as follows:
