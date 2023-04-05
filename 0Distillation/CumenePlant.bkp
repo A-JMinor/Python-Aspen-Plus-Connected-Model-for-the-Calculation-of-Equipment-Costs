@@ -1198,9 +1198,12 @@ $_END_APWNSHELL_SETTINGS
 #
 $_GRID_TEMPLATES
 $_START_TEMPLATE_Model
-<?xml version="1.0" encoding="utf-8"?>
-<TabbedSummaryGridTemplateCol>
-  <TabbedSummaryGridTemplates />
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabbedSummaryGridTemplateCol>
+
+  <TabbedSummaryGridTemplates />
+
 </TabbedSummaryGridTemplateCol>
 
 $_END_TEMPLATE_Model
