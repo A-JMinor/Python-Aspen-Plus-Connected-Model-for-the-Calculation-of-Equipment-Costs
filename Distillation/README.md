@@ -8,10 +8,16 @@ In the *Distillation.py* file there are functions to calculate the equipment cos
 The functions *distillationDWSTU* or *distillationRADFRAC* give as output the costs of the trayed DWSTU or RADFRAC columns, respectively (*d_costs_puchase_current*). Additionally, they give the dimentions of the columns such as diameter and volume (*d_diameter* in m, *d_volume* in m<sup>3</sup>). As input required is the application (aspen Plus python connection), the name of the DWSTU / RADFRAC defined in Aspen Plus (*nameDWSTU* / *nameRADFRAC*), the name of the input stream of the DWSTU / RADFRAC (*name_inputstream_DWSTU* / *name_inputstream_RADFRAC*), the tray spacing which is usally defined according to heuristics (mostly 0.5m), the top and bottom space (mostly defined through heuristics, 1.5 meters each), the density of the material in kg/m3 (*d_rho*), e.g. for stainless steel 8000 kg/m<sup>3</sup>, the material factor (*F_M*), e.g. for stainless steel 2.1 according to Seider et al. (2008) and the cost index of the desired year for the CAPEX calculation. 
 
 ### Used Equations for the Calucation of Equipment Dimensions and Purchase Costs
-The dimensions of the DWSTU and RADFRAC model are calulcated as show below. It is important to mention that for the DWSTU model in AspenPlus, the diameter needed to be calculated in the python code in an while loop, to operate at 80 percent of the flooding velocity. For the RADFRAC WEITER
+The dimensions of the DWSTU and RADFRAC model are calulcated as show below. 
 
 <p align="center">
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationDimension.png" width="700">
+</p>
+
+It is important to mention that for the DWSTU model in AspenPlus, the diameter needed to be calculated in the python code in an while loop, to operate at 80 percent of the flooding velocity. For the RADFRAC column model, Aspen Plus is able to calculate the diameter and give it as output. For this, it is important to generate a Tray Sizing tab *1* as shown in the figure below.  
+
+<p align="center">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/RADFRACSizing.png" width="700">
 </p>
 
 Based on the vessel weight, the costs are calculated as follows:
