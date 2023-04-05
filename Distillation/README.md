@@ -42,6 +42,7 @@ The functions *kettleDWSTU* or *kettleRADFRAC* give as output the current costs 
 
 The functions *condenserDWSTU* or *condenserRADFRAC* give as output the current costs of the condensers of the DWSTU or RADFRAC column model used in Aspen Plus (*cond_purchase_costs_current*), and the heat duty (*cond_Q*). As input required is the application (aspen Plus python connection),  the name of the DWSTU / RADFRAC column defined in Aspen Plus (*nameDWSTU* / *nameRADFRAC*), the fouling factor, e.g. 0.9 as a heuristic, and the cost index of the year where CAPEX is to be calculated.
 
+The equations for the cost calculation of a kettle reboiler or condenser are given at the subfolder [Heat Exchangers](Heat-Exchanger/).
 
 # Example
 
