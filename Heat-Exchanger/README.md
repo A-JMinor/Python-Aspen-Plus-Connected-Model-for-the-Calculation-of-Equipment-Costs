@@ -25,7 +25,9 @@ For the first two types of heat exchangers (shell and tube, and double pipe, bot
 
 The code in python was implemented according to the following equations: 
 
+<p align="center">
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerequations.PNG" width="700">
+</p>
 
 It is important to mention that the units are automatically adapted in the code, for example the area in m<sup>2</sup> is changed to an area in ft<sup>2</sup> within the function to match the cost correlation function. However, the output is fully transferred to SI units again, hence nothing needs to be adapted manually, only the units of the Aspen Plus file need to correspond to SI units as written above.
 
@@ -36,9 +38,12 @@ An example for the cost calculation of heat exchangers in a cumene production pl
 
 First, the Aspen Plus simulation had to be changed to match SI units as written above, rename all heat exchangers as described above, and change all heat exchangers to HeatX models.
 
-
+<p align="center">
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerexample.PNG" width="1000">
-
+</p>
+  
 Then, running the python code ExampleCumenePlant.py, it calls the function Heatexchanger.py and assesses the Aspen Plus example simulation CumenePlant4.bkp and computes costs and areas of all heat exchangers. As results the following outputs for the total costs, individual heat exchanger costs, heat duties and areas are obtained:
 
+<p align="center">
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangeroutputs.PNG" width="450">
+</p>
