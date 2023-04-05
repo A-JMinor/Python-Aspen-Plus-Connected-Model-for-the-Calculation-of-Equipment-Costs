@@ -83,4 +83,6 @@ for i in range(1,no_towers+1):
     name_distallestream_DWSTU = "RADTOP{}".format(i)            #reflux drum
     drum_costs_puchase2019[i-1], drum_volume[i-1] = refluxdrumRADFRAC(Application, nameRADFRAC, name_distallestream_DWSTU, drum_residence_time, drum_filled, drum_l_to_d, rho, F_M, cost_index_2019) 
 ```
+As results are obtained:
 
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationExample.PNG" width="450">
