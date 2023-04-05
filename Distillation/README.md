@@ -86,3 +86,6 @@ for i in range(1,no_towers+1):
 The following results are obtained:
 
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationExample.PNG" width="600">
+
+## References
+[^1]: W.D. Seider, J.D. Seader, D.R. Lewin, Product and Process Design Principles: Synthesis, Analysis and Design, 3rd Edition, Wiley New York, 2008.
