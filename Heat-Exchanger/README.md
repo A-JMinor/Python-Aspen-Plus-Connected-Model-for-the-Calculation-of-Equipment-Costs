@@ -37,7 +37,7 @@ An example for the cost calculation of heat exchangers in a cumene production pl
 
 First, the Aspen Plus simulation had to be changed to match SI units as written above, rename all heat exchangers as described above, and change all heat exchangers to HeatX models.
 
-```
+
 | Meaning                         | Formula                                                                                               |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------- |
 | Heat load                       | From Aspen Plus                                                                                       |
@@ -49,7 +49,6 @@ First, the Aspen Plus simulation had to be changed to match SI units as written 
 | Base costs                      | Reboiler: $A$ in $\text{ft}^2$<br>Kettle reboiler: $C_b=e^{11.967-0.8709\ln(A)+0.09005\ln(A)^2}$<br>Fired Heater: $Q$ in $\text{btu/hr}$<br>For $T < 300^\circ\text{C}$: $C_b=e^{0.32325-0.766\ln(Q)}$<br>For $T > 300^\circ\text{C}$: Dowtherm A Heater: $C_b=12.74Q^{0.65}$ |
 | Purchase costs                 | Shell and tube: $C_p=F_M F_L C_b$ with $F_L=1.05$ (heuristic Seider et al. (2008))<br>Double pipe, kettle reboiler and fired heater: $C_p=F_M C_b$ with $F_M$ according to heuristics (Seider et al. (2008)) |
 
-```
 
 Then, running the python code ExampleCumenePlant.py, it calls the function Heatexchanger.py and assesses the Aspen Plus example simulation CumenePlant4.bkp and computes costs and areas of all heat exchangers. As results the following outputs for the total costs, individual heat exchanger costs, heat duties and areas are obtained:
 
