@@ -44,6 +44,7 @@ Hence, this cost correlation is implemented in the python code, which retrieves 
 The costs of the following equipment were computed using the connected python Aspen Plus model: 
 
 [Heat Exchangers](Heat-Exchanger/)
+
 [Distillation Columns, Reflux Drums, Reboilers, Condensers](Distillation/)
 
 ## References
