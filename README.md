@@ -45,7 +45,7 @@ The costs of the following equipment were computed using the connected python As
 
 [Heat Exchangers](0Heat-Exchanger/)
 
-[Distillation Columns, Reflux Drums, Reboilers, Condensers](0Distillation/)
+[Distillation Columns, Reflux Drums, Reboilers, Condensers](1Distillation/)
 
 ## References
 [^1]: W.D. Seider, J.D. Seader, D.R. Lewin, Product and Process Design Principles: Synthesis, Analysis and Design, 3rd Edition, Wiley New York, 2008.
