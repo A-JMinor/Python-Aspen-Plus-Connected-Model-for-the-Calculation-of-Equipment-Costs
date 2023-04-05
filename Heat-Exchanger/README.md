@@ -38,13 +38,47 @@ An example for the cost calculation of heat exchangers in a cumene production pl
 First, the Aspen Plus simulation had to be changed to match SI units as written above, rename all heat exchangers as described above, and change all heat exchangers to HeatX models.
 
 ```
-Logarithmic mean temperature difference	From Aspen Plus
-Heat transfer coefficient	<ul><li>Water-liquid: 850 W/m²·°C</li><li>Liquid-liquid: 280 W/m²·°C</li><li>Gas-gas: 30 W/m²·°C</li><li>Reboiler: 1140 W/m²·°C</li><li>Water-water: 1140 W/m²·°C</li><li>Liquid-condensing vapour: 850 W/m²·°C</li></ul>
-Correction factor	F=0.9 (heuristic Seider et al., 2008)
-Arest	Q
-Area	A=U·ΔT<sub>LM</sub>·F / bar<br>Heat Exchanger: A in ft²<br>For A < 105 ft²: Double pipe: C<sub>b</sub>=exp(7.1460+0.16 ln(A))<br>Else: Shell and tube: C<sub>b</sub>=exp(11.0545-0.9228 ln(A)+0.09861 ln(A)²)
-Base costs	Reboiler: A in ft²<br>Kettle reboiler: C<sub>b</sub>=exp(11.967-0.8709 ln(A)+0.09005 ln(A)²)<br>Fired Heater: Q in BTU/h<br>For T < 300°C: C<sub>b</sub>=exp(0.32325-0.766 ln(Q))<br>For T > 300°C: Dowtherm A Heater: C<sub>b</sub>=12.74·Q⁰·⁶⁵
-Purchase costs	<ul><li>Shell and tube: C<sub>p</sub>=F<sub>M</sub>·F<sub>L</sub>·C<sub>b</sub> with F<sub>L</sub>=1.05 (heuristic Seider et al., 2008)</li><li>Double pipe, kettle reboiler and fired heater: C<sub>p</sub>=F<sub>M</sub>·C<sub>b</sub> with F<sub>M</sub> according to heuristics (Seider et al., 2008)</li></ul>
+$$
+\begin{array}{|c|c|}
+\hline \text { Meaning } & \text { Formula } \\
+\hline \text { Heat load } & \text { From Aspen Plus } \\
+\hline \begin{array}{l}
+\text { Logarithmic mean temperature } \\
+\text { difference }
+\end{array} & \text { From Aspen Plus } \\
+\hline \text { Heat transfer coefficient } & \begin{array}{c}
+\text { water - liquid: } 850 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
+\text { liquid - liquid: } 280 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
+\text { gas - gas: } 30 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
+\text { reboiler: } 1140 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
+\text { water - water: } 1140 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
+\text { liquid - condensing vapour: } 850 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C}
+\end{array} \\
+\hline \text { Correction factor } & \mathrm{F}=0.9 \quad \text { (heuristic Seider et al. (2008)) } \\
+\hline \text { Arest } & \mathrm{Q} \\
+\hline \text { Area } & A=\overline{\mathrm{U} \cdot \Delta \mathrm{T}_{\mathrm{LM}} \cdot \mathrm{F}} \\
+\hline & \begin{array}{c}
+\text { Heat Exchanger: } \mathrm{A} \text { in } \mathrm{ft}^2 \\
+\text { For } \mathrm{A}<105 \mathrm{ft}^2: \text { Double pipe: } \mathrm{C}_{\mathrm{b}}=\exp (7.1460+0.16 \ln (A)) \\
+\text { Else: Shell and tube: } \mathrm{C}_{\mathrm{b}}=\exp \left(11.0545-0.9228 \ln (A)+0.09861 \ln (A)^2\right)
+\end{array} \\
+\hline \text { Base costs } & \begin{array}{c}
+\text { Reboiler: } \mathrm{A} \text { in } \mathrm{ft}^2 \\
+\text { Kettle reboiler: } \mathrm{C}_{\mathrm{b}}=\exp \left(11.967-0.8709 \ln (A)+0.09005 \ln (A)^2\right)
+\end{array} \\
+\hline & \begin{array}{c}
+\text { Fired Heater: } \mathrm{Q} \text { in btu } / \mathrm{hr} \\
+\text { For } \mathrm{T}<300^{\circ} \mathrm{C}: \mathrm{C}_{\mathrm{b}}=\exp (0.32325-0.766 \ln (Q)) \\
+\text { For } \mathrm{T}>300^{\circ} \mathrm{C}: \text { Dowtherm A Heater: } \mathrm{C}_{\mathrm{b}}=12.74 \cdot \mathrm{Q}^{0.65}
+\end{array} \\
+\hline \text { Purchase costs } & \begin{array}{c}
+\text { Shell and tube } C_p=F_M \cdot F_L \cdot C_b \text { with } F_L=1.05 \text { (heuristic Seider et al. (2008)) } \\
+\text { Double pipe, kettle reboiler and fired heater: } C_p=F_M \cdot C_b \\
+\text { with } F_M \text { according to heuristics (Seider et al. (2008)) }
+\end{array} \\
+\hline
+\end{array}
+$$
 ```
 
 Then, running the python code ExampleCumenePlant.py, it calls the function Heatexchanger.py and assesses the Aspen Plus example simulation CumenePlant4.bkp and computes costs and areas of all heat exchangers. As results the following outputs for the total costs, individual heat exchanger costs, heat duties and areas are obtained:
