@@ -52,13 +52,13 @@ The equations for the cost calculation of a kettle reboiler or condenser are giv
 
 
 # Example
-An example for the cost calculation of the three RADFRAC columns of the cumene production plant (Example Simulation provided by Aspen Plus) is given below. 
+An example for the cost calculation of the three RADFRAC columns of the cumene production plant (Example Simulation provided by Aspen Plus: *CumenePlant.bkp*) is given below. First, the Aspen Plus simulation had to be changed to match SI units as written above, and Tray Sizing had to be created as shown above to obtain column diameters.
 
 <p align="center">
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Heatexchangerexample.PNG" width="1000">
 </p>
 
-First, Aspen Plus and Python had to be connected, the Aspen Plus simulation had to be changed to match SI units as written above, and Tray Sizing had to be created as shown above to obtain column diameters. Subsequently, the costs of towers, reflux drums, condensers, and kettle reboilers could be calculated in a for loop:
+The file ExampleCumenePlant.py first connects Aspen Plus and Python, accesses the functions required for the cost calculation in the distillation.py file and calculates the costs of towers, reflux drums, condensers, and kettle reboilers in a for loop:
 
 ```ruby
 i=0
