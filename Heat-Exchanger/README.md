@@ -38,47 +38,33 @@ An example for the cost calculation of heat exchangers in a cumene production pl
 First, the Aspen Plus simulation had to be changed to match SI units as written above, rename all heat exchangers as described above, and change all heat exchangers to HeatX models.
 
 ```
-$$
-\begin{array}{|c|c|}
-\hline \text { Meaning } & \text { Formula } \\
-\hline \text { Heat load } & \text { From Aspen Plus } \\
-\hline \begin{array}{l}
-\text { Logarithmic mean temperature } \\
-\text { difference }
-\end{array} & \text { From Aspen Plus } \\
-\hline \text { Heat transfer coefficient } & \begin{array}{c}
-\text { water - liquid: } 850 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
+\begin{tabular}{|c|c|}
+\hline Meaning & Formula \\
+\hline Heat load & From Aspen Plus \\
+\hline $\begin{array}{l}\text { Logarithmic mean temperature } \\
+\text { difference }\end{array}$ & From Aspen Plus \\
+\hline Heat transfer coefficient & $\begin{array}{c}\text { water - liquid: } 850 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
 \text { liquid - liquid: } 280 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
 \text { gas - gas: } 30 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
 \text { reboiler: } 1140 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
 \text { water - water: } 1140 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C} \\
-\text { liquid - condensing vapour: } 850 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C}
-\end{array} \\
-\hline \text { Correction factor } & \mathrm{F}=0.9 \quad \text { (heuristic Seider et al. (2008)) } \\
-\hline \text { Arest } & \mathrm{Q} \\
-\hline \text { Area } & A=\overline{\mathrm{U} \cdot \Delta \mathrm{T}_{\mathrm{LM}} \cdot \mathrm{F}} \\
-\hline & \begin{array}{c}
-\text { Heat Exchanger: } \mathrm{A} \text { in } \mathrm{ft}^2 \\
+\text { liquid - condensing vapour: } 850 \mathrm{~W} / \mathrm{m}^2 /{ }^{\circ} \mathrm{C}\end{array}$ \\
+\hline Correction factor & $\mathrm{F}=0.9 \quad$ (heuristic Seider et al. (2008)) \\
+\hline Arest & $\mathrm{Q}$ \\
+\hline Area & $A=\overline{\mathrm{U} \cdot \Delta \mathrm{T}_{\mathrm{LM}} \cdot \mathrm{F}}$ \\
+\hline & $\begin{array}{c}\text { Heat Exchanger: } \mathrm{A} \text { in } \mathrm{ft}^2 \\
 \text { For } \mathrm{A}<105 \mathrm{ft}^2: \text { Double pipe: } \mathrm{C}_{\mathrm{b}}=\exp (7.1460+0.16 \ln (A)) \\
-\text { Else: Shell and tube: } \mathrm{C}_{\mathrm{b}}=\exp \left(11.0545-0.9228 \ln (A)+0.09861 \ln (A)^2\right)
-\end{array} \\
-\hline \text { Base costs } & \begin{array}{c}
-\text { Reboiler: } \mathrm{A} \text { in } \mathrm{ft}^2 \\
-\text { Kettle reboiler: } \mathrm{C}_{\mathrm{b}}=\exp \left(11.967-0.8709 \ln (A)+0.09005 \ln (A)^2\right)
-\end{array} \\
-\hline & \begin{array}{c}
-\text { Fired Heater: } \mathrm{Q} \text { in btu } / \mathrm{hr} \\
+\text { Else: Shell and tube: } \mathrm{C}_{\mathrm{b}}=\exp \left(11.0545-0.9228 \ln (A)+0.09861 \ln (A)^2\right)\end{array}$ \\
+\hline Base costs & $\begin{array}{c}\text { Reboiler: } \mathrm{A} \text { in } \mathrm{ft}^2 \\
+\text { Kettle reboiler: } \mathrm{C}_{\mathrm{b}}=\exp \left(11.967-0.8709 \ln (A)+0.09005 \ln (A)^2\right)\end{array}$ \\
+\hline & $\begin{array}{c}\text { Fired Heater: } \mathrm{Q} \text { in btu } / \mathrm{hr} \\
 \text { For } \mathrm{T}<300^{\circ} \mathrm{C}: \mathrm{C}_{\mathrm{b}}=\exp (0.32325-0.766 \ln (Q)) \\
-\text { For } \mathrm{T}>300^{\circ} \mathrm{C}: \text { Dowtherm A Heater: } \mathrm{C}_{\mathrm{b}}=12.74 \cdot \mathrm{Q}^{0.65}
-\end{array} \\
-\hline \text { Purchase costs } & \begin{array}{c}
-\text { Shell and tube } C_p=F_M \cdot F_L \cdot C_b \text { with } F_L=1.05 \text { (heuristic Seider et al. (2008)) } \\
+\text { For } \mathrm{T}>300^{\circ} \mathrm{C}: \text { Dowtherm A Heater: } \mathrm{C}_{\mathrm{b}}=12.74 \cdot \mathrm{Q}^{0.65}\end{array}$ \\
+\hline Purchase costs & $\begin{array}{c}\text { Shell and tube } C_p=F_M \cdot F_L \cdot C_b \text { with } F_L=1.05 \text { (heuristic Seider et al. (2008)) } \\
 \text { Double pipe, kettle reboiler and fired heater: } C_p=F_M \cdot C_b \\
-\text { with } F_M \text { according to heuristics (Seider et al. (2008)) }
-\end{array} \\
+\text { with } F_M \text { according to heuristics (Seider et al. (2008)) }\end{array}$ \\
 \hline
-\end{array}
-$$
+\end{tabular}
 ```
 
 Then, running the python code ExampleCumenePlant.py, it calls the function Heatexchanger.py and assesses the Aspen Plus example simulation CumenePlant4.bkp and computes costs and areas of all heat exchangers. As results the following outputs for the total costs, individual heat exchanger costs, heat duties and areas are obtained:
