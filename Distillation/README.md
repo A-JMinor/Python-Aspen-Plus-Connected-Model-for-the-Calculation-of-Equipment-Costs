@@ -10,10 +10,14 @@ The functions *distillationDWSTU* or *distillationRADFRAC* give as output the co
 ### Used Equations for the Calucation of Equipment Dimensions and Purchase Costs
 The dimensions of the DWSTU and RADFRAC model are calulcated as show below. It is important to mention that for the DWSTU model in AspenPlus, the diameter needed to be calculated in the python code in an while loop, to operate at 80 percent of the flooding velocity. For the RADFRAC WEITER
 
+<p align="center">
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationDimension.png" width="700">
+</p>
 
+<p align="center">
 Based on the vessel weight, the costs are calculated as follows:
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationCosts.png" width="700">
+</p>
 
 
 ## Costs of the Reflux Drums
