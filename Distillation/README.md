@@ -1,8 +1,11 @@
 # Function Details
 
-**Important note:** This code only works correctly if the SI units are used in Aspen Plus. Particularly, for temperature and power / enthalpy flow the units are required to be in K and kW, respectively. Furthermore, all heat exchangers in Aspen Plus must be named according to E01, E02, E03, .. etc in the Aspen Plus simulation. 
+**Important note:** This code only works correctly if the SI units are used in Aspen Plus. Particularly, for temperature and power / enthalpy flow the units are required to be in K and kW, respectively. 
 
-This function called "heatexchanger" in the HeatExchanger.py file decides about the type of heat exchanger according to heuristics of Seider et al. (2008) and gives as output the sum of the current costs of all heat exchangers present in the simulation (*E_totalcosts*), the current costs of the individual heat exchangers (array *E_purchase_costs_current*), the heat exchanger duties (array *E_Q*) of the individual heat exchangers as well as the required heat exchanger areas of the individual heat exchangers (array *E_area*). As input required is the application, the total number of heat exchangers (*No_Heat_Exchanger*), the defined material and tube length correction factor (arrays *E_FM* and *E_FL*) of the heat echangers, and the current cost index (*current_cost_index*). The factors can be found in the book of Seider et al. (2008). For example, for stainless steel heat exchangers, the material factor is always set to 1. 
+In the *Distillation.py* file there are functions to calculate the equipment costs of the entire RADFRAC column model or DWSTU column model used in Aspen Plus. For both models, there exist separate functions to calculate the costs of a trayed column, the reflux drum as horizonal vessel, the kettle reboiler and the condenser of the column. 
+
+The functions distillationDWSTU or distillationRADFRAC give as output the costs of the **trayed** DWSTU or RADFRAC columns, respectively (*d_costs_puchase_current*). Additionally, they give the dimentions of the columns such as diameter and volume (*d_diameter* in m, *d_volume* in m<sup>3</sup>). As input required is the application (aspen Plus python connection), the name of the DWSTU/RADFRAC defined in Aspen Plus (*nameDWSTU/nameRADFRAC*), the name of the input stream of the DWSTU/RADFRAC (*name_inputstream_DWSTU*,*name_inputstream_RADFRAC*), the tray spacing which is usally defined according to heuristics (mostly 0.5m), the top and bottom space (mostly defined through heuristics, 1.5 meters each), the density of the material in kg/m3 (d_rho), e.g. for stainless steel 8000 kg/m<sup>3</sup>, the material factor (F_M), e.g. for stainless steel 2.1 according to Seider et al. (2008) and the cost index of the desired year for the CAPEX calculation. 
+
 
 ## Covered Distillation Models
 
@@ -10,7 +13,7 @@ This function called "heatexchanger" in the HeatExchanger.py file decides about 
 
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationDimension.png" width="700">
 
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationCosts.png" width="650">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/DistillationCosts.png" width="700">
 
 
 # Example
