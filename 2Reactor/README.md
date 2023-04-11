@@ -15,3 +15,5 @@ Based on the reactor dimensions, the vertical vessel weight and the costs are ca
 
 
 ## Example
+
+The file CSTRexample.py first connects the example Aspen Plus simulation (CSTR2.bkp) and Python script and then accesses the function reactorCSTR from the reactor.py file, which calculates costs and volume of the vertical vessel. 
