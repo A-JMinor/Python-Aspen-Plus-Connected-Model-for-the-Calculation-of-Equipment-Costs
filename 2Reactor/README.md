@@ -10,5 +10,5 @@ This function called "*reactorCSTR*" in the *Reactor*.py file gives as output th
 Based on the reactor dimensions, the vertical vessel weight and the costs are calculated as follows:
 
 <p align="center">
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Reactor.png" width="700">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/Reactor.png" width="650">
 </p>
