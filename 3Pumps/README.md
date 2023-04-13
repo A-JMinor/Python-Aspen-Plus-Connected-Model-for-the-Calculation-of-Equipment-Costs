@@ -10,7 +10,7 @@ This function called "*pumps*" in the *pumps.py* file gives as output the purcha
 Based on the flow rates, pump head, and liquid densities retrieved from Aspen Plus, the type of pump is decided and the pump costs calculated as follows:
 
 <p align="center">
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/pumps.png" width="600">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/pumps.png" width="700">
 </p>
 
 
