@@ -5,6 +5,13 @@
 
 This function called "*pumps*" in the *pumps.py* file gives as output the purchase costs of each single pump and motor (*pump_total_costs*, *pump_motor_purchase_costs_current*), the total purchase costs of all pumps and motors combined (*pump_purchase_costs_current*), and the pump head (*pump_head*) and flowrate (*pump_head*). As input required is the application, the number of pumps (*No_pumps*), pump_material_factor (e.g. 2 for stainless steel, see Seider et al. (2009), *pump_material_factor*), and the cost index of the year where CAPEX is to be calculated (e.g. 600 for 2019, *current_cost_index*).
 
+## Covered Type of Pumps
+
+This code automatically decides which type of pump is taken according to heuristics of Seider et al. (2008). Two types of pumps are considered:
+
+double pipe for heat exchanger areas below 14 m2,
+shell and tube for heat exchanger areas above 14 m2,
+
 ## Used Equations
 
 Based on the flow rates, pump head, and liquid densities retrieved from Aspen Plus, the type of pump is decided and the pump costs calculated as follows:
