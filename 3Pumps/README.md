@@ -9,8 +9,8 @@ This function called "*pumps*" in the *pumps.py* file gives as output the purcha
 
 This code automatically decides which type of pump is taken according to heuristics of Seider et al. (2008). Two types of pumps are considered:
 
-double pipe for heat exchanger areas below 14 m2,
-shell and tube for heat exchanger areas above 14 m2,
+1. centrifugal pump for volumetric flowrate from 0.000631 m3/s to 0.3155 m3/s and heads to 975 m
+2. reciprocating plunder pumps for more demanding applications for heads above 975 m (includes V belt drive in cost equation)
 
 ## Used Equations
 
