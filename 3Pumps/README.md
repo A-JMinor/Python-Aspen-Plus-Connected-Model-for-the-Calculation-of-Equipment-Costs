@@ -23,4 +23,4 @@ Based on the flow rates, pump head, and liquid densities retrieved from Aspen Pl
 
 ## Example
 
-The file CSTRexample.py first connects the example Aspen Plus simulation (CSTR2.bkp) and Python script and then accesses the function reactorCSTR from the reactor.py file, which calculates costs and volume of the vertical vessel. 
+The file in the example folder  CumenePlantPump.py first connects the example Aspen Plus simulation (CumenePlant.bkp) and Python and then accesses the function *pumps* from the pumps.py file, which calculates the costs and other variables described above. 
