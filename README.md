@@ -51,5 +51,9 @@ The costs of the following equipment were computed using the connected python As
 
 [Pumps](3Pumps/)
 
+[Vacuum Systems](4Vacuum-System/)
+
+[Evaporators](5Evaporator/)
+
 ## References
 [^1]: W.D. Seider, J.D. Seader, D.R. Lewin, Product and Process Design Principles: Synthesis, Analysis and Design, 3rd Edition, Wiley New York, 2008.
