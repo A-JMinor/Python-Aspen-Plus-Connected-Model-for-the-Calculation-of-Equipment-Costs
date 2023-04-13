@@ -1,7 +1,7 @@
 
-# Function Details
+# Function Details and Prerequisites
 
-**Important note:** This code only works correctly if the SI units are used in Aspen Plus. Particularly, for flowrates, or the pump head are required to be in m3/s and J/kg, respectively. 
+**Important note:** This code only works correctly if the SI units are used in Aspen Plus. Particularly, for flowrates, or the pump head are required to be in m3/s and J/kg, respectively. It is very important to name all pumps in the Aspen Plus simulation according to P01, P02, P03, ... etc.
 
 This function called "*pumps*" in the *pumps.py* file gives as output the purchase costs of each single pump and motor (*pump_total_costs*, *pump_motor_purchase_costs_current*), the total purchase costs of all pumps and motors combined (*pump_purchase_costs_current*), and the pump head (*pump_head*) and flowrate (*pump_head*). As input required is the application, the number of pumps (*No_pumps*), pump_material_factor (e.g. 2 for stainless steel, see Seider et al. (2009), *pump_material_factor*), and the cost index of the year where CAPEX is to be calculated (e.g. 600 for 2019, *current_cost_index*).
 
