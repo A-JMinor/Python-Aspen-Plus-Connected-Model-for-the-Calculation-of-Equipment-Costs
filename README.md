@@ -47,7 +47,7 @@ The costs of the following equipment were computed using the connected python As
 
 [Distillation Columns, Reflux Drums, Reboilers, Condensers](1Distillation/)
 
-[Reactor](2Reactor/)
+[Reactors](2Reactor/)
 
 [Pumps](3Pumps/)
 
