@@ -12,11 +12,15 @@ The two functions called "*vacuumsystemSTEAMJET*" and "*vacuumsystemLIQUIDRING*"
 The equations for the cost calculation of the liquid ring pump and steam jet ejectors are given below and include the calculation of the inputs such as flowrates to the vacuum systems. 
 
 <p align="center">
+  
   Liquid ring pump:
+  
+  
   
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/liquidringpump.png" width="650">
 
   Steam jet ejector system:
+  
   
 <img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/steamjetejector.png" width="650">
 </p>
