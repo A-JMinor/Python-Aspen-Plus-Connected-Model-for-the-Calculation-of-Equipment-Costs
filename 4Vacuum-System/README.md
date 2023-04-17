@@ -9,10 +9,12 @@ The two functions called "*vacuumsystemSTEAMJET*" and "*vacuumsystemLIQUIDRING*"
 
 ## Used Equations
 
-Based on the flow rates, pump head, and liquid densities retrieved from Aspen Plus, the type of pump is decided and the pump costs calculated as follows:
+The equations for the cost calculation of the liquid ring pump and steam jet ejectors are given below and include the calculation of the inputs such as flowrates to the vacuum systems. 
 
 <p align="center">
-<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/pumps.png" width="650">
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/liquidringpump.png" width="650">
+
+<img align="center" src="https://github.com/A-JMinor/Python-Aspen-Plus-Connected-Model-for-the-Calculation-of-Equipment-Costs/blob/main/Pictures/steamjetejector.png" width="650">
 </p>
 
 
