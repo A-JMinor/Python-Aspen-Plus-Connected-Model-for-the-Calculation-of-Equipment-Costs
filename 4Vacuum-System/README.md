@@ -25,4 +25,4 @@ Steam jet ejector system:
 
 ## Example
 
-There is an example given (ExampleSteamJetCode.py) that first connects the example Aspen Plus simulation (exampleSteamJet.bkp) and Python and then accesses the function *vacuumsystemSTEAMJET* from the vacuumoperation.py file, which calculates the costs and other variables through the connection as described above. 
+There is an example given (ExampleSteamJetCode.py) that first connects the example Aspen Plus simulation (exampleSteamJet.bkp with a vacuum reactor) and Python and then accesses the function *vacuumsystemSTEAMJET* from the vacuumoperation.py file, which calculates the costs and other variables through the connection as described above. 
